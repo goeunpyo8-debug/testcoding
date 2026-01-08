@@ -75,8 +75,8 @@ async function fetchCartItems() {
               name: product.name,
               category: product.seller?.store_name || "일반상품",
               price: product.price,
-              image: product.image.startsWith("../")
-                ? product.image.replace("../", "../../")
+              image: product.image.startsWith("./")
+                ? product.image.replace("./", "../../")
                 : product.image,
               option: `${
                 product.shipping_method === "PARCEL" ? "택배배송" : "직접배송"
